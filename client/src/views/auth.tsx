@@ -61,7 +61,7 @@ const Auth: FC<AuthProps> = ({ authRoute }) => {
   else
     body = (
       <>
-        <h1>D-Tek</h1>
+        <h1>Thermal - Oanh small</h1>
         <h4>Improve life everyday</h4>
         {authRoute === "login" && <LoginForm />}
         {authRoute === "register" && <RegisterForm />}

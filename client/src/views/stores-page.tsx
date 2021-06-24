@@ -85,7 +85,7 @@ const StorePage = () => {
         <Card className="text-center mx-5 my-5">
           <Card.Header as="h1">Hi {username}</Card.Header>
           <Card.Body>
-            <Card.Title>Welcome to Oanh small</Card.Title>
+            <Card.Title>Welcome to Oanh small App</Card.Title>
             <Card.Text>
               Click the button below to track your first store if you are Admin
             </Card.Text>

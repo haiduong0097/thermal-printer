@@ -1,0 +1,119 @@
+### Test connect
+POST https://enigmatic-depths-43746.herokuapp.com/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "duongnh",
+  "password": "duongnh"
+}
+
+### Test connect
+GET http://localhost:5000
+
+### Test connect api
+GET http://localhost:5000/api
+
+### Regist new account
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "duongnh2",
+  "password": "duongnh"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "duongnh",
+  "password": "duongnh"
+}
+
+### Get all store
+GET http://localhost:5000/api/store
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+### Create store
+POST http://localhost:5000/api/store
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+{
+  "storeTypeBill": "58",
+  "storeName": "The Coffee House",
+  "storeCode": "THE_COFFEE_HOUSEf",
+  "storeAddress": "so 1 Tan Xuan, Xuan Dinh, Ha Noi",
+  "storePhoneNumber": "0918273645",
+  "description": "",
+  "storeImageUrl": ""
+}
+
+### Update store
+PUT http://localhost:5000/api/store/60d2a712a6dc973a8206496c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+{
+  "storeTypeBill": "58",
+  "storeName": "The Coffee House0505",
+  "storeCode": "THE_COFFEE_HOUSE0505",
+  "storeAddress": "so 1 Tan Xuan, Xuan Dinh, Ha Noi",
+  "storePhoneNumber": "0918273645",
+  "description": "",
+  "storeImageUrl": ""
+}
+
+
+### Delete store
+DELETE http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+
+### Get all item information by store
+GET http://localhost:5000/api/item/60d1df944715a81b23219428
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+### Add item to store
+POST http://localhost:5000/api/item/60d1df944715a81b23219428
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+{
+  "name": "Tran chau trang24",
+  "price": "100000",
+  "isTopping": true
+}
+
+### get all bill for user
+GET http://localhost:5000/api/bill
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+### create bill by store for user
+POST http://localhost:5000/api/bill/60cdd674e8357e392e6dfa58
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
+{
+  "billcode": "AH123yj5",
+  "position": "A1",
+  "checkIn": "2021-06-19T06:46:30",
+  "checkOut": "2021-06-19T23:46:30",
+  "cashier": "Administrator",
+  "billDetails": [
+    {
+      "item" : "60cddc71c6070e4db11a9726",
+      "amount": 3
+    },
+    {
+      "item" : "60cddc90c6070e4db11a9729",
+      "amount": 3
+    }
+  ]
+}
+
+
+### get bill by store and bill id and user
+GET http://localhost:5000/api/bill/60cdd674e8357e392e6dfa58/60ce2b05da5b3475848e5d0f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE

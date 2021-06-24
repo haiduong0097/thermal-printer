@@ -41,15 +41,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable no-console */
 var express_1 = require("express");
-var router = express_1.Router();
 var argon2_1 = require("argon2");
 var jsonwebtoken_1 = require("jsonwebtoken");
 var auth_1 = __importDefault(require("../middleware/auth"));
 var lodash_1 = __importDefault(require("lodash"));
 var User_1 = __importDefault(require("../models/User"));
+var router = express_1.Router();
 // @route GET api/auth
 // @desc Check if user is logged in
-// @access Public
+// @access Private
 router.get('/', auth_1.default, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var user, error_1;
     return __generator(this, function (_a) {

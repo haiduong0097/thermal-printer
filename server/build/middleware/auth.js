@@ -1,5 +1,8 @@
 "use strict";
-var jwt = require('jsonwebtoken');
+Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable no-console */
+var jsonwebtoken_1 = require("jsonwebtoken");
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 var verifyToken = function (req, res, next) {
     var authHeader = req.header('Authorization');
     var token = authHeader && authHeader.split(' ')[1];
@@ -8,7 +11,7 @@ var verifyToken = function (req, res, next) {
             .status(401)
             .json({ success: false, message: 'Access token not found' });
     try {
-        var decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+        var decoded = jsonwebtoken_1.verify(token, process.env.ACCESS_TOKEN_SECRET);
         req.userId = decoded.userId;
         next();
     }
@@ -17,4 +20,4 @@ var verifyToken = function (req, res, next) {
         return res.status(403).json({ success: false, message: 'Invalid token' });
     }
 };
-module.exports = verifyToken;
+exports.default = verifyToken;

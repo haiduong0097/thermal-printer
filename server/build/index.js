@@ -45,14 +45,23 @@ var express_1 = __importDefault(require("express"));
 var mongoose_1 = __importDefault(require("mongoose"));
 var cors_1 = __importDefault(require("cors"));
 var auth_1 = __importDefault(require("./routes/auth"));
+var store_1 = __importDefault(require("./routes/store"));
+var item_1 = __importDefault(require("./routes/item"));
+var bill_1 = __importDefault(require("./routes/bill"));
 var connectDB = function () { return __awaiter(void 0, void 0, void 0, function () {
     var error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                console.log(process.env.DB_USERNAME);
-                return [4 /*yield*/, mongoose_1.default.connect("mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASSWORD + "@" + process.env.MONGOOSE_URL + "/" + process.env.MONGOOSE_CLUSTER + "?retryWrites=true&w=majority", {
+                // Test get data from dotenv
+                console.log(process.env.DB_USERNAME
+                    ? 'Get data env successfully.'
+                    : "Can't get data from dotenv.");
+                //
+                // mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.MONGOOSE_URL}/${process.env.MONGOOSE_CLUSTER}?retryWrites=true&w=majority
+                console.log("");
+                return [4 /*yield*/, mongoose_1.default.connect("mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASSWORD + "@thermal-printer.guqu5.mongodb.net/" + process.env.MONGOOSE_CLUSTER + "?retryWrites=true&w=majority", {
                         useCreateIndex: true,
                         useNewUrlParser: true,
                         useUnifiedTopology: true,
@@ -75,6 +84,11 @@ connectDB();
 var app = express_1.default();
 app.use(express_1.default.json());
 app.use(cors_1.default());
+app.get('/', function (req, res) { return res.send('Hello world! NodeJS running.'); });
+app.get('/api', function (req, res) { return res.send('Hello world! NodeJS running.'); });
 app.use('/api/auth', auth_1.default);
+app.use('/api/store', store_1.default);
+app.use('/api/item', item_1.default);
+app.use('/api/bill', bill_1.default);
 var PORT = process.env.PORT || 5000;
 app.listen(PORT, function () { return console.log("Server started on port " + PORT); });

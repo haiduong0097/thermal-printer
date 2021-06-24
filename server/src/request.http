@@ -1,5 +1,5 @@
 ### Test connect
-POST https://enigmatic-depths-43746.herokuapp.com/api/auth/login
+POST https://glacial-inlet-93964.herokuapp.com/api/auth/login
 Content-Type: application/json
 
 {
@@ -65,9 +65,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkY
   "storeImageUrl": ""
 }
 
-
 ### Delete store
-DELETE http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
+DELETE http://localhost:5000/api/store/60d3f8a05d72e4622450fd4e
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
 
 
@@ -81,10 +80,15 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
 
 {
-  "name": "Tran chau trang24",
+  "name": "Tran chau trangd24",
   "price": "100000",
   "isTopping": true
 }
+
+### Delete item
+DELETE http://localhost:5000/api/item/60d4042f6374bc838c1fd9de
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNkYzk0MzdjZDU4ZWI4OGFjZDBiMDgiLCJpYXQiOjE2MjQxMTU5OTF9.MUAjjjBgVUuoR00Lud1uKCBNZOqUIdjPIzz7mIaHUnE
+
 
 ### get all bill for user
 GET http://localhost:5000/api/bill
